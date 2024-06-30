@@ -28,13 +28,11 @@ app.use(notFound)
 app.use(errorHandlerMiddleware)
 
 
-let MONGO_URI="mongodb+srv://lmatt269:FhM7U2pW6ukRQV23@cluster0.y3zd104.mongodb.net/TASK-MANAGER?retryWrites=true&w=majority&appName=Cluster0"
-
 // Runs the server on port available
 const port = process.env.PORT || 3000
 const start = async () => {
     try {
-        await connectDB(MONGO_URI)
+        await connectDB(process.env.MONGO_URI)
         app.listen(port, console.log(`Your server is running! on ${port}`))
     } catch (error) {
         console.log(error)
