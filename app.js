@@ -34,7 +34,7 @@ MONGO_URI="mongodb+srv://lmatt269:FhM7U2pW6ukRQV23@cluster0.y3zd104.mongodb.net/
 const port = process.env.PORT || 3000
 const start = async () => {
     try {
-        await connectDB(process.env.MONGO_URI)
+        await connectDB(MONGO_URI)
         app.listen(port, console.log(`Your server is running! on ${port}`))
     } catch (error) {
         console.log(error)
