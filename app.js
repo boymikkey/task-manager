@@ -27,6 +27,9 @@ app.use('/api/v1/tasks', tasks)
 app.use(notFound)
 app.use(errorHandlerMiddleware)
 
+
+MONGO_URI=mongodb+srv://lmatt269:FhM7U2pW6ukRQV23@cluster0.y3zd104.mongodb.net/TASK-MANAGER?retryWrites=true&w=majority&appName=Cluster0
+
 // Runs the server on port available
 const port = process.env.PORT || 3000
 const start = async () => {
